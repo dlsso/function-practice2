@@ -31,7 +31,7 @@ function removeM(string){
 			noEms.push(string[i])
 		}	
 	}
-	newString = noEms.join('')
+	var newString = noEms.join('')
 	return newString
 }
 console.log(removeM('memory'))
@@ -55,13 +55,14 @@ function vowels(string){
 console.log(vowels('What lets in youth?'))
 
 function twins(array){
-	pairs = true
+	var pairs = true
 	for (var i = 0; i < array.length; i+=2) {
 		if(array[i] === array[i+1]){pairs = true}
-		else{pairs = false}
+		else{pairs = false; break}
 	};
 	return pairs
 }
+console.log(twins(['a', 'a', 'b', 'c', 'c', 'c']))
 console.log(twins(['a', 'a', 'b', 'b', 'c', 'c']))
 console.log(twins(['a', 'a', 'b', 'z']))
 console.log(twins(['a', 'a', 'b']))
@@ -69,7 +70,7 @@ console.log(twins(['a', 'a', 'b', undefined]))
 
 
 function or(bArray){
-	answer = false
+	var answer = false
 	for (var i = 0; i < bArray.length; i++) {
 		if(bArray[i]){answer = true}
 	};
@@ -80,3 +81,13 @@ console.log(or([false, false, false]))
 console.log(or([]))
 
 
+
+function unique(sArray) {
+	var uniques = []
+	for (var i = 0; i < sArray.length; i++) {
+		if($.inArray(sArray[i], uniques) === -1 ) {uniques.push(sArray[i])}
+	};
+	return uniques
+}
+console.log(unique(['a', 'b', 'a', 'c', 'd', 'd']))
+console.log(unique(['todd', 'avery', 'maria', 'avery']))
