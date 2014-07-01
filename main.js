@@ -43,3 +43,40 @@ function printObject(object) {
 }
 printObject({ a: 10, b: 20, c: 30 })
 
+function vowels(string){
+	var vowels = []
+	for (var i = 0; i < string.length; i++) {
+		if(string[i] === "a" || string[i] === "e" || string[i] === "i" || string[i] === "o" || string[i] === "u"){
+			vowels.push(string[i])
+		}
+	};
+	return vowels
+}
+console.log(vowels('What lets in youth?'))
+
+function twins(array){
+	pairs = true
+	for (var i = 0; i < array.length; i+=2) {
+		if(array[i] === array[i+1]){pairs = true}
+		else{pairs = false}
+	};
+	return pairs
+}
+console.log(twins(['a', 'a', 'b', 'b', 'c', 'c']))
+console.log(twins(['a', 'a', 'b', 'z']))
+console.log(twins(['a', 'a', 'b']))
+console.log(twins(['a', 'a', 'b', undefined]))
+
+
+function or(bArray){
+	answer = false
+	for (var i = 0; i < bArray.length; i++) {
+		if(bArray[i]){answer = true}
+	};
+	return answer
+}
+console.log(or([false, false, true, false]))
+console.log(or([false, false, false]))
+console.log(or([]))
+
+
